@@ -1,0 +1,32 @@
+[workspace]
+resolver = "2"
+members = [
+    "common",
+    "ext4",
+    "kernel",
+    "libs",
+    "loader",
+]
+
+[workspace.dependencies]
+# internal crates
+common = { path = "common" }
+ext4 = { path = "ext4" }
+libs = { path = "libs" }
+
+# shared external deps (centralize versions)
+noto-sans-mono-bitmap = "0.3.1"
+
+[workspace.package]
+version = "0.11.8"
+edition = "2024"
+repository = ""
+license = "MIT"
+
+[profile.release]
+debug = true
+panic = "unwind"
+
+[profile.dev]
+debug = true
+panic = "unwind"
