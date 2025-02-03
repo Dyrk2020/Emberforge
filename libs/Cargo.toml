@@ -1,0 +1,13 @@
+[package]
+name = "libs"
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+license.workspace = true
+publish = false
+
+[lib]
+name = "os_libs"
+path = "src/libs.rs"
+
+[dependencies]
