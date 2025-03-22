@@ -1,0 +1,14 @@
+[package]
+name = "ext4"
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+license.workspace = true
+publish = false
+
+[lib]
+name = "os_ext4"
+path = "src/ext4.rs"
+
+[dependencies]
+common = { workspace = true }
