@@ -1,0 +1,11 @@
+[build]
+target = [
+    "x86_64-kernel.json",
+    "aarch64-kernel.json",
+    "riscv64gc-kernel.json"
+]
+
+[unstable]
+json-target-spec = true
+build-std = ["core", "alloc", "compiler_builtins"]
+build-std-features = ["compiler-builtins-mem"]

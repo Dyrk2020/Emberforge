@@ -1,0 +1,40 @@
+[package]
+name = "kernel"
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+license.workspace = true
+publish = false
+
+[[bin]]
+name = "kernel"
+path = "src/main.rs"
+
+[dependencies]
+log = "0.4.27"
+spin = "0.10.0"
+noto-sans-mono-bitmap = { workspace = true, features = ["font_weights_all", "raster_heights_all"] }
+common = { workspace = true }
+
+[features]
+svm = []
+svm_run = ["svm"]
+
+[target.'cfg(target_arch = "x86_64")'.dependencies]
+aml = "0.16.4"
+acpi = "6.0.1"
+x86 = "0.52.0"
+nostd = "0.1.4"
+x2apic = "0.5.0"
+x86_64 = "0.15.2"
+uart_16550 = "0.4.0"
+png-decoder = "0.2.0"
+conquer-once = { version = "0.4.0", default-features = false }
+lazy_static = { version = "1.4.0", features = ["spin_no_std"] }
+linked_list_allocator = "0.10.5"
+
+[target.'cfg(target_arch = "aarch64")'.dependencies] 
+
+[target.'cfg(target_arch = "riscv64")'.dependencies] 
+sbi-rt = { version = "0.0.3", features = ["legacy"] }
+riscv = "0.16.0"
